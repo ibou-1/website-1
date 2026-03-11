@@ -27,7 +27,7 @@ async function loadReviews() {
     for( let i = 0; i < allReviewsDataLength; i++){
       rateSum += allReviewsData[i].rate;
     };
-    let rateAv = (rateSum / allReviewsDataLength).toFixed(2);
+    let rateAv = (rateSum / allReviewsDataLength).toFixed(1);
 
     const productRateContainer = document.getElementById('product-rate-stars')
     let starPercentageProduct;
@@ -44,7 +44,7 @@ async function loadReviews() {
     <div class="stars-outer-product">
       <div class="stars-inner" style="width: ${starPercentageProduct}%"></div>
     </div>
-    <div id="rateProductValue" style="color:grey">${rateAv}</div>`
+    <div id="rateProductValue">${rateAv}</div>`
     // rate average dyal product end
 
     container.innerHTML = ''; 

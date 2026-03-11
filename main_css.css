@@ -246,7 +246,8 @@ main{
     top: 11px;
     background-color: rgb(255, 255, 0);
     border-radius: 20px;
-    width: 20%;
+    width: fit-content;
+    min-width: 150px;
 }
 
 #products{
@@ -260,7 +261,7 @@ main{
 
 .product-container{
     height: 290px;
-    width: 165px;
+    width: 170px;
     box-shadow: 10px 10px 20px #000000b3;
     border-radius: 20px;
     padding: 6px;
@@ -272,7 +273,7 @@ main{
     width: 150px;
     height: auto;
     border-radius: 10%;
-    
+    margin-left: 5px;
 }
 
 .product-name{
@@ -328,7 +329,7 @@ main{
 .rateProductValue{
     margin-left: 5px;
     margin-top: 10px;
-    color: black;
+    color: #5a5858da;
     font-weight: bold;
     font-size: 15px;
 }

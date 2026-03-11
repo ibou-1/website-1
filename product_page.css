@@ -9,6 +9,19 @@ body{
     background-color: #bcf6fbb3;
 }
 
+html {
+  scroll-padding-top: 120px; 
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+a{
+    text-decoration: none;
+}
+
 /*logo bar ou logo*/
 #logo{
     position: fixed;
@@ -249,13 +262,16 @@ body{
 #rateProductValue{
     margin-left: 10px;
     margin-top: 10px;
+    color: #5a5858da;
+    font-weight: bold;
+    font-size: 15px;
 }
 
 .stars-outer-product {
   display: inline-block;
   position: relative;
   font-size: 1.7rem;
-  color: #ddd; /* Empty stars color */
+  color: #5a585896; /* Empty stars color */
 }
 
 /* product rate end */
@@ -379,20 +395,20 @@ body{
 
 #reviews-container{
     display: grid;
-    width: 100%;
+    width: 80%;
+    max-width: 1000px;
     height: auto;
     justify-self: center;
     justify-items: center;
     align-items: center;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
-    column-gap: 20px;
-    row-gap: 10px;
+    row-gap: 0px;
     margin-top: 30px;
 }
 
 .review{
-    padding: 20px;
+    padding: 15px;
     width: 170px;
     margin: 10px;
     height: 160px;
@@ -405,10 +421,9 @@ body{
 .customer{
     justify-self: center;
     width: 100%;
-    height: auto;
     text-align: center;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .comment{
@@ -422,7 +437,7 @@ body{
     padding-bottom: 20px;
     font-size: 14px;
     background-color: #bcf6fbb3;
-    box-shadow: inset -2px -1px 5px #000000;
+    box-shadow: inset -2px -1px 5px #00000075;
 }
 
 .comment::-webkit-scrollbar{
@@ -502,7 +517,7 @@ body{
   font-size: 1.7rem;
   left: 50%;
   transform: translateX(-50%);
-  color: #ddd; /* Empty stars color */
+  color: #5a585896; /* Empty stars color */
 }
 
 .stars-outer::before, .stars-outer-product::before {
