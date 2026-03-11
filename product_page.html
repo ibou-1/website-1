@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product-1</title>
+    <link rel="stylesheet" href="product_page.css">
+    <script src="product-page.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <a href=index.html>
+                <img src="photos/logo.png" alt="Company Logo">
+            </a>
+        </div>
+    </header>
+    <main>
+        <div id="wrapper">
+            <section id="images-section">
+                <h4 id="product-name"></h4>
+
+                <div id="radio-inputs-container"></div>
+
+                <div id="show-img"></div>
+
+                <div id="images-thumbnails"></div>
+            </section>
+
+            <section id="product-info">
+                <div id="product-discount">
+                    <p>100dh</p>
+                </div>
+                <div id="product-price"></div>
+                <div id="quantity">
+                    <label for="quantity-input">Quantity</label>
+                    <button type="button"
+                        onclick="this.parentNode.querySelector('input').stepDown()"><span>-</span></button>
+                    <input type="number" id="quantity-input" min="1" max="50" value="1">
+                    <button type="button" onclick="this.parentNode.querySelector('input').stepUp()">+</button>
+                </div>
+
+                <form name="contact" action="https://script.google.com/macros/s/AKfycbz3oLn7vR0eRLiO34k8VyvB6teRUOUSxNkJosUJ9oEiAD0GQdCz659UPL6NMumziJuiyw/exec" method="POST">
+                    <div id="form">
+                        <h4>Please fill the form to order</h4>
+                        <br>
+                        <div id="name">
+                            <input name="name" class="form" type="text" placeholder="Name" required>
+                        </div>
+                        <br>
+                        <div id="city">
+                            <input name="city" class="form" type="text" placeholder="City" required>
+                        </div>
+                        <br>
+                        <div id="phone">
+                            <input name="phone" placeholder="Phone" class="form" type="tel" required maxlength="13" minlength="10"
+                                pattern="[0-9]{10,15}" oninput="this.value = this.value.replace(/[^0-9\+\s]/g, '')">
+                        </div>
+                        <button type="submit">Order NOW</button>
+                    </div>
+                </form>
+
+                <section id="product-rate">
+                    <h3>Product Rate</h3>
+                    <div id="product-rate-stars"></div>
+                </section>
+
+                <hr>
+                <h1 id="description-title">Description</h1>
+                <div id="description">
+                    <p>
+                        description<br>
+                        description<br>
+                        description<br>
+                        description<br>
+                        description<br>
+                        description<br>
+                        description<br>
+                        description<br>
+                        description<br>
+                        description<br>
+                        mafyya li ktab hh.
+                    </p>
+                </div>
+            </section>
+        </div>
+        <section id="reviews">
+            <h1>Customer reviews</h1>
+            <div id="reviews-container"></div>
+            <button id="show-more-btn" style="display:none;" onclick="displayNextBatch()">Show more</button>
+            <div id="add-review">
+                <h2>Add a review</h2>
+                <form id="review-form">
+                    <input name="customer-name" class="form" type="text" id="customer-name" placeholder="Name" required><br>
+                    <textarea name="comment" id="comment" placeholder="Give us your review" maxlength="100" required></textarea><br>
+                    <div id="rating">
+                        <input type="radio" name="rating" id="r5" value="5"><label for="r5"></label>
+                        <input type="radio" name="rating" id="r4" value="4"><label for="r4"></label>
+                        <input type="radio" name="rating" id="r3" value="3"><label for="r3"></label>
+                        <input type="radio" name="rating" id="r2" value="2"><label for="r2"></label>
+                        <input type="radio" name="rating" id="r1" value="1" required><label for="r1"></label>
+                    </div>
+                    <br>
+                    <button id="submit-review" type="submit">Submit Review</button>
+                </form>
+        </section>
+    </main>
+    <section id="contact">
+        <h2>Contact</h2>
+        <ul>
+            <li><a href="https://www.facebook.com/KronosouK/" target="_blank"><img
+                        src="photos/social-media/facebook.png" alt="Facebook"></a></li>
+            <li><a href="https://wa.me/+212703924911" target="_blank"><img src="photos/social-media/whatsapp.png"
+                        alt="WhatsApp"></a></li>
+            <li><a href="https://www.instagram.com/p/DBrxYfUqket/" target="_blank"><img
+                        src="photos/social-media/instagram.png" alt="Instagram"></a></li>
+        </ul>
+    </section>
+    <footer>
+        <p>&copy; 2026 KronosouK. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,157 @@
+[
+    {
+        "id": "a34q",
+        "name": "A34Q Konnfulon",
+        "priceBefore": 1,
+        "specialOffer": false,
+        "discount": "",
+        "imgs":[
+            "photos/products/a34q/1.png",
+            "photos/products/a34q/2.png",
+            "photos/products/a34q/3.png",
+            "photos/products/a34q/4.png"
+        ]
+    },
+    {
+        "id": "air-10",
+        "name": "AIR-10 Plustar",
+        "priceBefore": 2,
+        "specialOffer": false,
+        "discount": "",
+        "imgs":[
+            "photos/products/air-10/1.png",
+            "photos/products/air-10/2.png",
+            "photos/products/air-10/3.png",
+            "photos/products/air-10/4.png"
+        ]
+    },
+    {
+        "id": "bts-11",
+        "name": "BTS-11 Konfulon",
+        "priceBefore": 3,
+        "specialOffer": false,
+        "discount": "",
+        "imgs":[
+            "photos/products/bts-11/1.png",
+            "photos/products/bts-11/2.png",
+            "photos/products/bts-11/3.png"
+        ]
+    },
+    {
+        "id": "cam",
+        "name": "Wireless camera",
+        "priceBefore": 4,
+        "specialOffer": false,
+        "discount": "",
+        "imgs":[
+            "photos/products/cam/1.png",
+            "photos/products/cam/2.png",
+            "photos/products/cam/3.png"
+        ]
+    },
+    {
+        "id": "kg-01",
+        "name": "KG-01 Konfulon",
+        "priceBefore": 5,
+        "specialOffer": false,
+        "discount": "",
+        "imgs":[
+            "photos/products/kg-01/1.png",
+            "photos/products/kg-01/2.png",
+            "photos/products/kg-01/3.png",
+            "photos/products/kg-01/4.png"
+        ]
+    },
+    {
+        "id": "s20pro",
+        "name": "S20 PRO MAX",
+        "priceBefore": 6,
+        "specialOffer": false,
+        "discount": "",
+        "imgs":[
+            "photos/products/s20pro/1.png",
+            "photos/products/s20pro/2.png",
+            "photos/products/s20pro/3.png",
+            "photos/products/s20pro/4.png"
+        ]
+    },
+    {
+        "id": "r1",
+        "name": "R1 Deepbass",
+        "priceBefore": 7,
+        "specialOffer": false,
+        "discount": "",
+        "imgs":[
+            "photos/products/r1/1.png",
+            "photos/products/r1/2.png",
+            "photos/products/r1/3.png",
+            "photos/products/r1/4.png",
+            "photos/products/r1/5.png"
+        ]
+    },
+    {
+        "id": "r8",
+        "name": "R8 Deepbass",
+        "priceBefore": 8,
+        "specialOffer": false,
+        "discount": "",
+        "imgs":[
+            "photos/products/r8/1.png",
+            "photos/products/r8/2.png",
+            "photos/products/r8/3.png",
+            "photos/products/r8/4.png",
+            "photos/products/r8/5.png"
+        ]
+    },
+    {
+        "id": "chargeur",
+        "name": "Samsung Original Charger",
+        "priceBefore": 9,
+        "specialOffer": false,
+        "discount": "",
+        "imgs":[
+            "photos/products/chargeur/1.png",
+            "photos/products/chargeur/2.png",
+            "photos/products/chargeur/3.png"
+        ]
+    },
+    {
+        "id": "d100",
+        "name": "D100 Super AMOLED",
+        "priceBefore": 10,
+        "specialOffer": true,
+        "discount": 0.5,
+        "imgs":[
+            "photos/products/d100/1.png",
+            "photos/products/d100/2.png",
+            "photos/products/d100/3.png",
+            "photos/products/d100/4.png"
+        ]
+    },
+    {
+        "id": "wt10",
+        "name": "WT10 Plustar",
+        "priceBefore": 11,
+        "specialOffer": true,
+        "discount": 0.1,
+        "imgs":[
+            "photos/products/wt10/1.png",
+            "photos/products/wt10/2.png",
+            "photos/products/wt10/3.png",
+            "photos/products/wt10/4.png"
+        ]
+    },
+    {
+        "id": "wt11",
+        "name": "wt11 Plustar",
+        "priceBefore": 12,
+        "specialOffer": true,
+        "discount": 0.3,
+        "imgs":[
+            "photos/products/wt11/1.png",
+            "photos/products/wt11/2.png",
+            "photos/products/wt11/3.png",
+            "photos/products/wt11/4.png"
+        ]
+    }
+]
