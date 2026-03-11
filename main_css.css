@@ -84,6 +84,32 @@ nav ul li a{
     font-size: 15px;
     cursor: pointer;
 }
+
+#contact-icon{
+    font-size: 50px;
+    text-shadow: 5px 3px 10px #000000;
+    cursor: pointer;
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    z-index: 3;
+    animation: contact-icon-animation 2s ease-in-out infinite;
+}
+
+@keyframes contact-icon-animation{
+    0%, 5% {transform: rotate(-10deg)}
+    5%, 10% {transform: rotate(10deg)}
+    10%, 15% {transform: rotate(-10deg)}
+    15%, 20% {transform: rotate(10deg)}
+    20%, 90% {transform: rotate(0deg)}
+}
+
+#contact-icon:hover{
+    font-size: 56px;
+    right: 17px;
+    bottom: 27px;
+    animation-play-state: paused;
+}
 /*navigation bar end*/
 
 main{
