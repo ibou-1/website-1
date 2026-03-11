@@ -342,28 +342,32 @@ main{
 
 /* Stars Styling */
 
+:root{
+    --widthI: 130px;
+}
+
 .product-rate{
     display: flex;
     justify-content: center;
     justify-self: center;
     flex-wrap: nowrap;
-    border-radius: 20px;
-    width: 155px;
-    margin-top: 5px;
+    width: var(--widthI);
+    margin-top: 10px;
 }
 
 .rateProductValue{
     margin-left: 5px;
-    margin-top: 10px;
     color: #5a5858da;
     font-weight: bold;
-    font-size: 15px;
+    font-size: calc(var(--widthI) * 0.1);
+    align-self: center;
 }
 
 .stars-outer {
   display: inline-block;
   position: relative;
-  font-size: 1.7rem;
+  font-size: calc(var(--widthI) * 0.16);
+  align-self: center;
   color: #5a585896; /* Empty stars color */
 }
 
