@@ -2,7 +2,7 @@ const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzEdnShYHSX1m
 
 function generateStarsHtml(productId, allReviews) {
     const productReviews = allReviews.filter(rev => rev.productId === productId || rev.id === productId);
-    
+
     if (productReviews.length === 0) {
         return `<div class="stars-outer"><div class="stars-inner" style="width: 0%"></div></div>
                 <div class="rateProductValue">(0)</div>`;
@@ -49,7 +49,7 @@ async function loadProducts() {
                         <img src="photos/products/${item.id}/1.png" alt="${item.id}">
                         <div class="product-name">${item.name}</div>
                         <div class="product-price">${item.priceBefore}dh</div>
-                        <button>Add to cart</button>
+                        <button>order now</button>
                         <div class="product-rate">
                             ${generateStarsHtml(item.id, allReviewsData)}
                         </div>
@@ -74,11 +74,11 @@ async function loadProducts() {
                 </div>
             `).join('');
 
-        if(productContainer) productContainer.innerHTML = productsHtml;
-        if(specialOffersContainer) specialOffersContainer.innerHTML = specialOfferHtml;
-        if(sliderContainer0) sliderContainer0.innerHTML = sliderHtml;
-        if(sliderContainer1) sliderContainer1.innerHTML = sliderHtml;
-        
+        if (productContainer) productContainer.innerHTML = productsHtml;
+        if (specialOffersContainer) specialOffersContainer.innerHTML = specialOfferHtml;
+        if (sliderContainer0) sliderContainer0.innerHTML = sliderHtml;
+        if (sliderContainer1) sliderContainer1.innerHTML = sliderHtml;
+
     } catch (error) {
         console.error("Error loading store:", error);
     }
