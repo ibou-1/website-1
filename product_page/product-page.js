@@ -1,7 +1,7 @@
 //rating system
 
 // 1. YOUR UNIQUE LINK FROM GOOGLE
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzEdnShYHSX1mPwt63dswxG-_ezGaVl47c5kCQ1HqaVJtPGRtrNwv2r5pmalg3yKmRDdw/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzGO7efu1Qi0f5ZWlgSja3Dkz7zoeJT0XJOx3J8zt9T4EXUiuWlOEinfa_wZt76Pdrx6w/exec';
 
 let allReviewsData = []; 
 let currentIndex = 0;
@@ -102,6 +102,7 @@ function updateButton() {
   }
 }
 
+
 // 3. FUNCTION TO SUBMIT REVIEWS (Website -> Sheet)
 async function submitReview(event) {
   event.preventDefault();
@@ -153,7 +154,7 @@ const productId = params.get('id');
 
 async function loadProducts() {
     try {
-        const response = await fetch('products.json');
+        const response = await fetch('../products.json');
         const products = await response.json();
         const product = products.find(p => p.id === productId);
 

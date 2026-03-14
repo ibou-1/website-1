@@ -1,4 +1,4 @@
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzEdnShYHSX1mPwt63dswxG-_ezGaVl47c5kCQ1HqaVJtPGRtrNwv2r5pmalg3yKmRDdw/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzGO7efu1Qi0f5ZWlgSja3Dkz7zoeJT0XJOx3J8zt9T4EXUiuWlOEinfa_wZt76Pdrx6w/exec';
 
 function generateStarsHtml(productId, allReviews) {
     const productReviews = allReviews.filter(rev => rev.productId === productId || rev.id === productId);
@@ -23,7 +23,7 @@ function generateStarsHtml(productId, allReviews) {
 async function loadProducts() {
     try {
         const [prodResponse, sheetResponse] = await Promise.all([
-            fetch('products.json'),
+            fetch('../products.json'),
             fetch(GOOGLE_SCRIPT_URL)
         ]);
 
@@ -34,19 +34,34 @@ async function loadProducts() {
         const specialOffersContainer = document.getElementById('special-offers');
         const sliderContainer0 = document.getElementsByClassName('all-sliders')[0];
         const sliderContainer1 = document.getElementsByClassName('all-sliders')[1];
+        const categories = document.getElementById('categories-container-ul');
 
+        //categories man json file
+        const rawCategories = products.map(item => item.categories).filter(removeItem => removeItem !=='Other');
+        const uniqueCategories = [...new Set(rawCategories)].sort();
+        uniqueCategories.push('Other');
+        console.log(uniqueCategories);
+        categories.innerHTML = uniqueCategories
+          .map(item => `
+            <a href="../categories/categories.html?categories=${item}">
+            <li>${item}</li>
+            </a>`)
+          .join('');
+
+        // siled photos man json
         const sliderHtml = products.map(item => `
             <div class="slide">
-                <img src="photos/products/${item.id}/1.png" alt="${item.id}">
+                <img src="../photos/products/${item.id}/1.png" alt="${item.id}">
             </div>
         `).join('');
 
+        //koula product b img name rate price...
         const productsHtml = products
             .filter(item => item.specialOffer === false)
             .map(item => `
                 <div class="product-container">
-                    <a href="product_page.html?id=${item.id}" target="_blank">
-                        <img src="photos/products/${item.id}/1.png" alt="${item.id}">
+                    <a href="../product_page/product_page.html?id=${item.id}" target="_blank">
+                        <img src="../photos/products/${item.id}/1.png" alt="${item.id}">
                         <div class="product-name">${item.name}</div>
                         <div class="product-price">${item.priceBefore}dh</div>
                         <button>order now</button>
@@ -57,12 +72,13 @@ async function loadProducts() {
                 </div>
             `).join('');
 
+        //koula special offre product ou infos dyalo
         const specialOfferHtml = products
             .filter(item => item.specialOffer === true)
             .map(item => `
                 <div class="offer-item">
-                    <a href="product_page.html?id=${item.id}" target="_blank">
-                        <img src="photos/products/${item.id}/1.png" alt="${item.id}">
+                    <a href="../product_page/product_page.html?id=${item.id}" target="_blank">
+                        <img src="../photos/products/${item.id}/1.png" alt="${item.id}">
                         <div class="offer-name">${item.name}</div>
                         <div class="price-before">${item.priceBefore}dh</div>
                         <div class="price-after">${(item.priceBefore * (1 - item.discount)).toFixed(2)}dh</div>
@@ -74,10 +90,11 @@ async function loadProducts() {
                 </div>
             `).join('');
 
-        if (productContainer) productContainer.innerHTML = productsHtml;
-        if (specialOffersContainer) specialOffersContainer.innerHTML = specialOfferHtml;
-        if (sliderContainer0) sliderContainer0.innerHTML = sliderHtml;
-        if (sliderContainer1) sliderContainer1.innerHTML = sliderHtml;
+        //koula 7aja katmchi lblastha f html page
+        productContainer.innerHTML = productsHtml;
+        specialOffersContainer.innerHTML = specialOfferHtml;
+        sliderContainer0.innerHTML = sliderHtml;
+        sliderContainer1.innerHTML = sliderHtml;
 
     } catch (error) {
         console.error("Error loading store:", error);
