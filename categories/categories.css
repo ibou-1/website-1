@@ -65,6 +65,8 @@ body {
     transform: translateX(-50%);
     top: 75px;
     height: 45px;
+    white-space: nowrap;
+    width: auto;
     overflow: hidden;
 }
 
@@ -109,7 +111,7 @@ body {
 }
 
 .product-container {
-    height: 280px;
+    height: 300px;
     width: 170px;
     box-shadow: 10px 10px 20px #000000b3;
     border-radius: 20px;
@@ -136,12 +138,27 @@ body {
     color: black;
 }
 
-.product-price {
-    text-align: center;
+#prices{
+    display: flex;
+    width: 50%;
+    justify-self: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.product-price-after {
     font-weight: bold;
-    margin-top: 3px;
     color: green;
     cursor: default;
+    font-size: 20px;
+}
+
+.product-price-before{
+    color: red;
+    cursor: default;
+    text-decoration: line-through;
+    font-weight: bold;
+    font-size: 15px;
 }
 
 #products button {
