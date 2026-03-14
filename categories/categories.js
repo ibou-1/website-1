@@ -27,12 +27,6 @@ async function loadCategoryPage() {
             item.categories === selectedCategory
         );
 
-        // 3. Handle case where no products match
-        if (filteredProducts.length === 0) {
-            productContainer.innerHTML = `<div class="error-msg" style="position: absolute; margin-top: 160px;">No products found in "${selectedCategory}"</div>`;
-            return;
-        }
-
         // 4. Build the HTML (Re-using your grid logic)
         const productsHtml = filteredProducts
         .filter(item=> item.specialOffer === false)
@@ -79,6 +73,11 @@ async function loadCategoryPage() {
 
         productContainer.innerHTML = productsHtml;
         specialOffersContainer.innerHTML = specialOfferHtml;
+
+        if (filteredProducts.length === 0) {
+            document.body.innerHTML = `<div class="error-msg" style="position: relative; margin-top: 10px;">No products found in "${selectedCategory}" category</div>`;
+            return;
+        }
 
     } catch (error) {
         console.error("Error loading categories:", error);
