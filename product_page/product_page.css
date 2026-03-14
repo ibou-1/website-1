@@ -125,16 +125,16 @@ a{
     white-space: nowrap;
 }
 
-#product-discount{
+#product-price-before{
     position: relative;
     top: 8px;
-    right: 135px;
+    right: 150px;
     font-size: 19px;
-    text-decoration: line-through;
+    text-decoration: line-through 1.5px red;
     color: red;
 }
 
-#product-price{
+#product-price-after{
     position: relative;
     font-size: 30px;
     color: green;

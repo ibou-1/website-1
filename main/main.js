@@ -40,7 +40,6 @@ async function loadProducts() {
         const rawCategories = products.map(item => item.categories).filter(removeItem => removeItem !=='Other');
         const uniqueCategories = [...new Set(rawCategories)].sort();
         uniqueCategories.push('Other');
-        console.log(uniqueCategories);
         categories.innerHTML = uniqueCategories
           .map(item => `
             <a href="../categories/categories.html?categories=${item}">
@@ -63,7 +62,10 @@ async function loadProducts() {
                     <a href="../product_page/product_page.html?id=${item.id}" target="_blank">
                         <img src="../photos/products/${item.id}/1.png" alt="${item.id}">
                         <div class="product-name">${item.name}</div>
-                        <div class="product-price">${item.priceBefore}dh</div>
+                        <div id="prices">
+                            <div class="product-price-before">${item.priceBefore}dh</div>
+                            <div class="product-price-after">${item.priceAfter}dh</div>
+                        </div>
                         <button>order now</button>
                         <div class="product-rate">
                             ${generateStarsHtml(item.id, allReviewsData)}
@@ -80,9 +82,11 @@ async function loadProducts() {
                     <a href="../product_page/product_page.html?id=${item.id}" target="_blank">
                         <img src="../photos/products/${item.id}/1.png" alt="${item.id}">
                         <div class="offer-name">${item.name}</div>
-                        <div class="price-before">${item.priceBefore}dh</div>
-                        <div class="price-after">${(item.priceBefore * (1 - item.discount)).toFixed(2)}dh</div>
-                        <div class="offer-discount">${(item.discount * 100).toFixed(0)}%</div>
+                        <div id="prices">
+                            <div class="product-price-before">${item.priceBefore}dh</div>
+                            <div class="product-price-after">${item.priceAfter}dh</div>
+                        </div>
+                        <div class="offer-discount">${((1-(item.priceAfter)/(item.priceBefore)) * 100).toFixed(0)}%</div>
                         <div class="product-rate">
                             ${generateStarsHtml(item.id, allReviewsData)}
                         </div>

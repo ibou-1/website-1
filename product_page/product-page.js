@@ -165,7 +165,9 @@ async function loadProducts() {
 
         // Fill Text Info
         document.getElementById('product-name').innerText = product.name;
-        document.getElementById('product-price').innerHTML = `<p>${product.priceBefore}dh</p>`;
+        document.getElementById('product-price-after').innerHTML = `<p>${product.priceAfter}dh</p>`;
+        document.getElementById('product-price-before').innerHTML = `<p><strong>${product.priceBefore}dh</strong></p>`;
+
         const form = document.getElementById('form');
         form.insertAdjacentHTML('beforeend', `<input type="hidden" name="productId" value="${product.id}">`);
 
