@@ -1,55 +1,3 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body{
-    overflow-x: hidden;
-    background-color: #bcf6fbb3;
-}
-
-html {
-  scroll-padding-top: 120px; 
-  scroll-behavior: smooth;
-}
-
-::-webkit-scrollbar{
-    display: none;
-}
-
-a{
-    text-decoration: none;
-}
-
-/*logo bar ou logo*/
-#logo{
-    position: fixed;
-    top: 0;
-    background: linear-gradient(to right, #66f5ff 0%, #004080 50%, #66f5ff 100%);
-    padding: 5;
-    text-align: center;
-    font-weight: bold;
-    box-sizing: border-box;
-    width: 100%;
-    margin: 0;
-    z-index: 1;
-    border-bottom: 2px solid yellow;
-    overflow: hidden;
-}
-
-#logo img{
-    position: relative;
-    top: 0;
-    width: 120px;
-    height: auto;
-    margin: -30px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-/*logo bar ou logo end*/
-
 /*images*/
 #images-section{
     position: relative;
@@ -119,10 +67,11 @@ a{
 }
 
 #product-name{
-    position: relative;
     font-size: 30px;
     color: black;
-    white-space: nowrap;
+    width: auto;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 #product-price-before{
@@ -206,8 +155,8 @@ a{
 }
 
 #form > button{
-    margin-left: 30%;
-    margin-right: 30%;
+    position: relative;
+    left: 30%;
     margin-top: 5px;
     background: #ff7700;
     padding: 5px;
@@ -285,6 +234,7 @@ a{
     }
     #images-section{
         position: sticky;
+        overflow: visible;
         right: 20px;
         padding: 5px;
         grid-column: 2;
@@ -318,6 +268,8 @@ a{
     }
     #product-name{
         margin-bottom: 15px;
+        text-wrap: wrap;
+        font-size: 19px;
     }
     #product-discount{right: 200px;}
     #product-price{right: 160px;}
@@ -351,38 +303,6 @@ a{
     margin-left: 20px;
 }
 /*description*/
-
-/*contact section*/
-#contact{
-    margin-top: 30px;
-    text-align: center;
-    background: linear-gradient(to right, #66f5ff 0%, #004080 50%, #66f5ff 100%);;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    width: 100%;
-    height: auto;
-}
-
-#contact h2{
-    color: white;
-    margin-bottom: 10px;
-    text-decoration: underline;
-}
-
-#contact ul{
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 10% max(30px);
-    margin-left: 10%;
-    margin-right: 10%;
-}
-
-#contact img{
-    width: 100px;
-    height: auto;
-}
-/*contact section end*/
 
 /*reviews*/
 #reviews > h1{
@@ -565,6 +485,7 @@ a{
 
 #customer-name{
     width: 100%;
+    height: 35px;
     padding: 10px;
     border-radius: 20px;
     border: 1px solid transparent;
@@ -629,12 +550,3 @@ a{
 /*rating dyal add review end*/
 
 /*reviews*/
-
-footer{
-    border-top: 2px solid yellow;
-    padding: 10px;
-    text-align: center;
-    background: linear-gradient(to right, #66f5ff 0%, #004080 50%, #66f5ff 100%);;
-    color: rgb(255, 255, 255);
-    font-size: 14px;
-}

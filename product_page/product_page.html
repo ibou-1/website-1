@@ -6,15 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>product-1</title>
     <link rel="stylesheet" href="product_page.css">
+    <link rel="stylesheet" href="../same_codes.css">
     <script src="product-page.js" defer></script>
 </head>
 
 <body>
     <header>
         <div id="logo">
-            <a href="../main/index.html">
-                <img src="../photos/logo.png" alt="Company Logo">
-            </a>
+            <div id="logo-img">
+                <a href="../main/index.html">
+                    <img src="../photos/logo.png" alt="Company Logo">
+                </a>
+            </div>
         </div>
     </header>
     <main>
@@ -32,15 +35,14 @@
             <section id="product-info">
                 <div id="product-price-before"></div>
                 <div id="product-price-after"></div>
-                <div id="quantity">
-                    <label for="quantity-input">Quantity</label>
-                    <button type="button"
-                        onclick="this.parentNode.querySelector('input').stepDown()"><span>-</span></button>
-                    <input type="number" id="quantity-input" min="1" max="50" value="1">
-                    <button type="button" onclick="this.parentNode.querySelector('input').stepUp()">+</button>
-                </div>
 
                 <form name="contact" action="https://script.google.com/macros/s/AKfycbz3oLn7vR0eRLiO34k8VyvB6teRUOUSxNkJosUJ9oEiAD0GQdCz659UPL6NMumziJuiyw/exec" method="POST">
+                    <div id="quantity">
+                        <label for="quantity-input">Quantity</label>
+                        <button type="button"onclick="this.parentNode.querySelector('input').stepDown()"><span>-</span></button>
+                        <input name="quantity" type="number" id="quantity-input" min="1" max="50" value="1">
+                        <button type="button" onclick="this.parentNode.querySelector('input').stepUp()">+</button>
+                    </div>
                     <div id="form">
                         <h4>Please fill the form to order</h4>
                         <br>
