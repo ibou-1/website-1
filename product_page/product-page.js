@@ -151,12 +151,15 @@ loadReviews(); // Runs when the page first opens
 
 const params = new URLSearchParams(window.location.search);
 const productId = params.get('id');
+let product;
+let productName;
+let productPriceNumber;
 
 async function loadProducts() {
     try {
-        const response = await fetch('../products.json');
-        const products = await response.json();
-        const product = products.find(p => p.id === productId);
+        response = await fetch('../products.json');
+        products = await response.json();
+        product = products.find(p => p.id === productId);
 
         if (!product) {
             document.body.innerHTML = "<h1>Product not found!</h1>";
@@ -164,9 +167,11 @@ async function loadProducts() {
         }
 
         // Fill Text Info
-        document.getElementById('product-name').innerText = product.name;
-        document.getElementById('product-price-after').innerHTML = `<p>${product.priceAfter}dh</p>`;
-        document.getElementById('product-price-before').innerHTML = `<p><strong>${product.priceBefore}dh</strong></p>`;
+        productName = document.getElementById('product-name').innerText = product.name;
+        productPriceNumber = product.priceAfter;
+        let quantity = document.getElementById('quantity-input').value;
+        document.getElementById('product-price-after').innerHTML = `<p>${product.priceAfter * quantity}dh</p>`;
+        document.getElementById('product-price-before').innerHTML = `<p><strong>${product.priceBefore * quantity}dh</strong></p>`;
 
         const form = document.getElementById('form');
         form.insertAdjacentHTML('beforeend', `<input type="hidden" name="productId" value="${product.id}">`);
@@ -214,6 +219,11 @@ async function loadProducts() {
         console.error("Error:", error);
     }
 }
+function updatePrice(){
+  let quantity = document.getElementById('quantity-input').value;
+  document.getElementById('product-price-after').innerHTML = `<p>${product.priceAfter * quantity}dh</p>`;
+   document.getElementById('product-price-before').innerHTML = `<p><strong>${product.priceBefore * quantity}dh</strong></p>`;
+}
 
 function updateSlider(activeIndex, total) {
     const showImg = document.getElementById('show-img');
@@ -252,3 +262,40 @@ window.addEventListener('resize', () => {
 });
 
 loadProducts();
+
+//send form dyal order 3ad thank u page
+const form = document.getElementById('contactForm');
+const scriptURL = 'https://script.google.com/macros/s/AKfycbz3oLn7vR0eRLiO34k8VyvB6teRUOUSxNkJosUJ9oEiAD0GQdCz659UPL6NMumziJuiyw/exec';
+const btn = document.getElementById('order-form-btn');
+
+form.addEventListener('submit', e => {
+  e.preventDefault(); // Stop the page from freezing/reloading
+  
+  // 1. Visual Feedback: Disable button & change text
+  btn.disabled = true;
+  btn.innerHTML = "Sending...";
+  btn.style.opacity = "0.5";
+  btn.style.cursor = "not-allowed";
+
+  //njma3 les info dyal form
+  const name = form.querySelector('input[name="name"]').value;
+  const city = form.querySelector('input[name="city"]').value;
+  const phone = form.querySelector('input[name="phone"]').value;
+  const quantity = form.querySelector('input[name="quantity"]').value;
+
+
+  // 2. Send the data in the background
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => {
+       // 3. Success! Redirect to your thank you page
+       window.location.href = `../thank_you_page/thank_you_page.html?id=${productId}&name=${encodeURIComponent(name)}&city=${encodeURIComponent(city)}&phone=${phone}&qty=${quantity}&productName=${productName}&productPrice=${productPriceNumber}`;
+    })
+    .catch(error => {
+       // 4. If there's an error, let them try again
+       alert("Error! Please try again.");
+       btn.disabled = false;
+       btn.innerHTML = "Order NOW";
+       btn.style.opacity = "1";
+       console.error('Error!', error.message);
+    });
+});

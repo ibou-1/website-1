@@ -36,12 +36,12 @@
                 <div id="product-price-before"></div>
                 <div id="product-price-after"></div>
 
-                <form name="contact" action="https://script.google.com/macros/s/AKfycbz3oLn7vR0eRLiO34k8VyvB6teRUOUSxNkJosUJ9oEiAD0GQdCz659UPL6NMumziJuiyw/exec" method="POST">
+                <form name="contact" id="contactForm">
                     <div id="quantity">
                         <label for="quantity-input">Quantity</label>
-                        <button type="button"onclick="this.parentNode.querySelector('input').stepDown()"><span>-</span></button>
-                        <input name="quantity" type="number" id="quantity-input" min="1" max="50" value="1">
-                        <button type="button" onclick="this.parentNode.querySelector('input').stepUp()">+</button>
+                        <button type="button"onclick="this.parentNode.querySelector('input').stepDown(); updatePrice();"><span>-</span></button>
+                        <input name="quantity" type="number" id="quantity-input" min="1" max="50" value="1" oninput="updatePrice();">
+                        <button type="button" onclick="this.parentNode.querySelector('input').stepUp(); updatePrice();">+</button>
                     </div>
                     <div id="form">
                         <h4>Please fill the form to order</h4>
@@ -58,7 +58,7 @@
                             <input name="phone" placeholder="Phone" class="form" type="tel" required maxlength="13" minlength="10"
                                 pattern="[0-9]{10,15}" oninput="this.value = this.value.replace(/[^0-9\+\s]/g, '')">
                         </div>
-                        <button type="submit">Order NOW</button>
+                        <button type="submit" id="order-form-btn">Order NOW</button>
                     </div>
                 </form>
 

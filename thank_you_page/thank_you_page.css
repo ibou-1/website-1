@@ -1,0 +1,112 @@
+main{
+    position: relative;
+    margin-top: 105px;
+    justify-content: center;
+    justify-self: center;
+}
+
+#thank_you_paragraph > p{
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#second-paragraph{
+    font-size: 25px;
+}
+
+#costumer-name{
+  font-size: 40px;
+  font-family: sans-serif;
+  font-weight: 900;
+  -webkit-text-stroke: 1px #004080;
+  filter: drop-shadow(1px 3px 2px #000);
+  background: linear-gradient(90deg, rgb(218, 250, 75), rgb(194, 158, 52), rgb(218, 250, 75));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: move-paper 1.5s linear infinite;
+}
+
+@keyframes move-paper {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+#costumer-phone{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#recap-container{
+  margin-top: 15px;
+  border-top: 3px solid rgb(0, 0, 0);
+  padding-top: 15px;
+  padding-bottom: 50px;
+}
+
+#recap-container > h4{
+  text-align: center;
+  font-size: x-large;
+  color: #004080;
+  text-decoration: underline #004080;
+}
+
+.costumer-info{
+    border: 1px solid #004080;
+    background: white;
+    margin: 15px;
+    border-radius: 50px;
+    padding: 5px;
+    width: auto;
+    min-width: 300px;
+    justify-self: center;
+    text-align: center;
+}
+
+.recap{
+  font-weight: bold;
+}
+
+.recap > span{
+  font-weight: normal;
+}
+
+#recap-product-info{
+  height: 180px;
+  width: auto;
+  padding: 15px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  border: 1px solid #004080;
+  border-radius: 15px;
+  background: white;
+  justify-self: center;
+}
+
+#recap-product-img{
+  border-radius: 10px;
+  height: 150px;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+
+#recap-product-img > img{
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+
+#product-infos{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  margin-left: 15px;
+  align-self: center;
+  gap: 15px;
+}
