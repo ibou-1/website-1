@@ -1,7 +1,7 @@
 //rating system
 
 // 1. YOUR UNIQUE LINK FROM GOOGLE
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzGO7efu1Qi0f5ZWlgSja3Dkz7zoeJT0XJOx3J8zt9T4EXUiuWlOEinfa_wZt76Pdrx6w/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwVj_Ta5xcFzSHM2_XSqPRf8I0Iab4dbZCnYbMHg3k97p3dXK08tMANxmDRLYfbou0mJQ/exec';
 
 let allReviewsData = []; 
 let currentIndex = 0;
