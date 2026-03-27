@@ -246,6 +246,8 @@ function generateStarsHtml(productId, allReviews) {
 
 //more products section
 async function loadMoreProducts(currentCategory) {
+  let filteredHtml = '';
+  let filtredHtmlSpecialOffers = '';
   try {
     const [response, sheetResponse] = await Promise.all([
       fetch('../products.json'),
@@ -258,7 +260,7 @@ async function loadMoreProducts(currentCategory) {
     const moreProductContainer = document.getElementById('more-products-container');
 
     // Filter using the category we passed in
-    const filteredHtml = allProducts
+    filteredHtml = allProducts
       .filter(item => item.categories === currentCategory && item.id !== productId)
       .filter(item => item.specialOffer === false) // Added a check to hide the current product from the list
       .map(item => `
@@ -280,7 +282,7 @@ async function loadMoreProducts(currentCategory) {
 
     moreProductContainer.innerHTML += filteredHtml;
 
-    const filtredHtmlSpecialOffers = allProducts
+    filtredHtmlSpecialOffers = allProducts
       .filter(item => item.categories === currentCategory && item.id !== productId)
       .filter(item => item.specialOffer === true)
       .map(item => `
@@ -301,11 +303,14 @@ async function loadMoreProducts(currentCategory) {
                 `).join('');
     moreProductContainer.innerHTML += filtredHtmlSpecialOffers;
 
-
+    if(filteredHtml === ''){
+      loadMoreProducts('Other')
+    }
   } catch (error) {
     console.error("Error loading more products:", error);
   }
 }
+
 async function initPage() {
   try {
     // 1. Wait for the main product to load and get its category

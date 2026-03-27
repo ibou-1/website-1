@@ -143,20 +143,20 @@
 
 /*form*/
 #form{
+    display: flex;             /* Changed to flex for easier alignment */
+    flex-direction: column;
     justify-items: center;
+    align-items: center;
     width: 100%;
-    height: 212px;
+    height: 220px;
     max-width: 300px;
     box-shadow: 3px 3px 5px #000000;
     border-radius: 20px;
     padding: 5px;
-    margin-top: -20px;
     background: rgba(238, 236, 236, 0.597);
 }
 
 #form > button{
-    position: relative;
-    left: 30%;
     margin-top: 5px;
     background: #ff7700;
     padding: 5px;
@@ -335,7 +335,7 @@
     max-width: 300px;
     min-width: 190px;
     margin: 10px;
-    height: 160px;
+    height: 190px;
     background: rgba(255, 255, 255, 0.241);
     border-radius: 30px;
     border: 1px solid #aeaeae;
@@ -354,7 +354,7 @@
 .comment{
     overflow: auto;
     width: 100%;
-    height: 80px;
+    height: 110px;
     justify-self: center;
     border-radius: 5px;
     border: 1px solid black;
